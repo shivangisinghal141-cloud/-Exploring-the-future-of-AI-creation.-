@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Ledger &amp; Gold — Web Design for Small Businesses</title>
+<meta name="description" content="Ledger & Gold designs custom, affordable websites for small businesses — boutiques, cafés, coaches, and studios. Fixed pricing, four-step process, launch in weeks." />
+<meta name="keywords" content="small business web design, affordable website design, boutique web design studio, custom website pricing" />
+<link rel="canonical" href="https://www.ledgerandgold.com/" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Ledger & Gold — Web Design for Small Businesses" />
+<meta property="og:description" content="Custom, affordable websites for small businesses. Fixed pricing. Four-step process. Real results." />
+<meta property="og:url" content="https://www.ledgerandgold.com/" />
+
+<meta name="robots" content="index, follow" />
+<meta name="theme-color" content="#0B1E3D" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Ledger & Gold",
+  "description": "Boutique web design studio for small businesses, offering custom websites at fixed prices.",
+  "priceRange": "$499-$1499",
+  "areaServed": "US",
+  "url": "https://www.ledgerandgold.com/"
+}
+</script>
+
+<style>
+  :root{
+    --navy:#0B1E3D;
+    --navy-deep:#071427;
+    --navy-mid:#152B52;
+    --navy-line: rgba(198,161,91,0.25);
+    --white:#FFFFFF;
+    --cream:#F7F4EE;
+    --cream-line: rgba(11,30,61,0.12);
+    --gold:#C6A15B;
+    --gold-deep:#9C7A38;
+    --gold-bright:#E4C078;
+    --ink:#101826;
+    --ink-soft:#4A5468;
+    --ink-faint:#8891A3;
+    --radius: 2px;
+    --maxw: 1180px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:'Inter', -apple-system, sans-serif;
+    color:var(--ink);
+    background:var(--white);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4{
+    font-family:'Fraunces', Georgia, serif;
+    font-weight:500;
+    line-height:1.12;
+    margin:0;
+    color:var(--navy);
+    letter-spacing:-0.01em;
+  }
+  a{color:inherit; text-decoration:none;}
+  img{max-width:100%; display:block;}
+  ul{margin:0; padding:0; list-style:none;}
+  button{font-family:inherit; cursor:pointer;}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 32px;}
+  section{position:relative;}
+
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--gold-deep);
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:18px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:22px; height:1px;
+    background:var(--gold-deep);
+    display:inline-block;
+  }
+
+  /* Ledger rule — signature motif: a thin ruled line with a tick, used as a divider
+     everywhere a real accounting ledger would draw one under a subtotal. */
+  .ledger-rule{
+    position:relative;
+    height:1px;
+    background:var(--cream-line);
+    margin:0;
+  }
+  .ledger-rule.on-dark{ background:var(--navy-line); }
+  .ledger-rule::after{
+    content:"";
+    position:absolute; left:0; top:-3px;
+    width:6px; height:7px;
+    border-left:1px solid var(--gold-deep);
+    border-bottom:1px solid var(--gold-deep);
+  }
+
+  /* ---------- Header ---------- */
+  header{
+    position:fixed; top:0; left:0; right:0; z-index:100;
+    background:rgba(255,255,255,0.92);
+    backdrop-filter: blur(8px);
+    border-bottom:1px solid var(--cream-line);
+  }
+  .nav{
+    max-width:var(--maxw); margin:0 auto; padding:0 32px;
+    display:flex; align-items:center; justify-content:space-between;
+    height:76px;
+  }
+  .logo{
+    font-family:'Fraunces', serif; font-weight:600; font-size:20px;
+    color:var(--navy); display:flex; align-items:baseline; gap:6px;
+  }
+  .logo span{color:var(--gold-deep); font-style:italic; font-weight:500;}
+  .nav-links{display:flex; align-items:center; gap:36px;}
+  .nav-links a{
+    font-size:14px; font-weight:500; color:var(--ink-soft);
+    transition:color .2s;
+  }
+  .nav-links a:hover{color:var(--navy);}
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center;
+    padding:12px 24px;
+    font-size:14px; font-weight:600;
+    border-radius:var(--radius);
+    border:1px solid transparent;
+    transition:all .2s ease;
+    white-space:nowrap;
+  }
+  .btn-gold{ background:var(--gold); color:var(--navy-deep); }
+  .btn-gold:hover{ background:var(--gold-bright); }
+  .btn-outline-dark{ border-color:var(--navy); color:var(--navy); background:transparent; }
+  .btn-outline-dark:hover{ background:var(--navy); color:var(--white); }
+  .btn-outline-light{ border-color:rgba(255,255,255,0.35); color:var(--white); background:transparent; }
+  .btn-outline-light:hover{ border-color:var(--gold); color:var(--gold-bright); }
+
+  .nav-toggle{ display:none; background:none; border:none; padding:8px; }
+  .nav-toggle span{ display:block; width:22px; height:2px; background:var(--navy); margin:5px 0; }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    background:var(--navy);
+    color:var(--white);
+    padding:168px 0 96px;
+    overflow:hidden;
+    position:relative;
+  }
+  .hero::before{
+    content:"";
+    position:absolute; inset:0;
+    background-image:
+      linear-gradient(var(--navy-line) 1px, transparent 1px);
+    background-size: 100% 44px;
+    opacity:0.5;
+    pointer-events:none;
+  }
+  .hero-grid{
+    display:grid; grid-template-columns:1.1fr 0.9fr; gap:56px; align-items:center;
+    position:relative; z-index:1;
+  }
+  .hero h1{
+    font-size:clamp(34px, 4.6vw, 56px);
+    color:var(--white);
+    max-width:640px;
+  }
+  .hero h1 em{ font-style:italic; color:var(--gold-bright); }
+  .hero p.lead{
+    margin-top:22px; font-size:17px; color:rgba(255,255,255,0.72);
+    max-width:480px;
+  }
+  .hero-ctas{ display:flex; gap:14px; margin-top:34px; flex-wrap:wrap; }
+  .hero-stats{
+    display:flex; gap:36px; margin-top:56px; padding-top:28px;
+    border-top:1px solid var(--navy-line);
+  }
+  .stat-num{ font-family:'Fraunces', serif; font-size:28px; color:var(--gold-bright); }
+  .stat-label{ font-size:12px; color:rgba(255,255,255,0.55); margin-top:4px; }
+
+  /* Browser mock in hero */
+  .browser-mock{
+    background:var(--white);
+    border-radius:6px;
+    overflow:hidden;
+    box-shadow:0 30px 70px rgba(0,0,0,0.35);
+    transform:rotate(1.2deg);
+  }
+  .browser-chrome{
+    background:#EDEAE2; padding:10px 14px; display:flex; gap:6px; align-items:center;
+  }
+  .browser-chrome i{ width:9px; height:9px; border-radius:50%; background:#D8D2C4; display:inline-block; }
+  .chrome-url{
+    margin-left:10px; font-family:'IBM Plex Mono', monospace; font-size:10.5px;
+    color:#8A8474; background:#F7F4EC; border-radius:3px; padding:3px 10px;
+  }
+  .browser-body{ padding:26px 24px; }
+  .mock-line{ height:8px; background:var(--cream-line); border-radius:2px; margin-bottom:10px;}
+  .mock-brand{
+    font-family:'Fraunces', serif; font-size:13px; font-weight:600; letter-spacing:.03em;
+    color:var(--navy); text-transform:uppercase; margin-bottom:12px;
+  }
+  .mock-headline{
+    font-family:'Fraunces', serif; font-size:19px; line-height:1.25; color:var(--navy);
+    margin-bottom:16px;
+  }
+  .mock-blocks{ display:flex; gap:10px; margin-top:2px; margin-bottom:16px; }
+  .mock-blocks div{
+    flex:1; padding:12px 10px; background:var(--cream); border:1px solid var(--cream-line);
+    display:flex; flex-direction:column; gap:6px;
+  }
+  .mock-blocks div span{ font-size:11px; color:var(--ink-soft); line-height:1.3; }
+  .mock-blocks div em{ font-style:normal; font-size:12.5px; font-weight:700; color:var(--navy); }
+  .mock-gold-bar{
+    display:inline-block; height:auto; width:auto; background:var(--gold); color:var(--navy-deep);
+    margin-top:2px; border-radius:2px; padding:8px 16px; font-size:11.5px; font-weight:700;
+  }
+  .mock-footnote{ margin-top:16px; font-size:11px; color:var(--ink-faint); }
+
+  /* ---------- Section shells ---------- */
+  .section{ padding:110px 0; }
+  .section.cream{ background:var(--cream); }
+  .section-head{ max-width:640px; margin-bottom:64px; }
+  .section-head h2{ font-size:clamp(28px,3.2vw,40px); }
+  .section-head p{ margin-top:16px; color:var(--ink-soft); font-size:16px; max-width:520px; }
+
+  /* ---------- Portfolio / "The Ledger" ---------- */
+  .ledger-entry{
+    display:grid; grid-template-columns:80px 1fr 1.1fr; gap:40px;
+    align-items:start;
+    padding:44px 0;
+    border-top:1px solid var(--cream-line);
+  }
+  .ledger-entry:last-child{ border-bottom:1px solid var(--cream-line); }
+  .entry-num{
+    font-family:'IBM Plex Mono', monospace; font-size:13px; color:var(--gold-deep);
+    padding-top:6px;
+  }
+  .entry-copy h3{ font-size:24px; margin-bottom:6px; }
+  .entry-tag{
+    font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:.08em;
+    text-transform:uppercase; color:var(--ink-faint); margin-bottom:14px; display:block;
+  }
+  .entry-copy p{ color:var(--ink-soft); font-size:15px; max-width:400px; }
+  .entry-result{
+    margin-top:16px; font-size:14px; color:var(--navy); font-weight:600;
+    display:flex; gap:8px; align-items:baseline;
+  }
+  .entry-result::before{ content:"↑"; color:var(--gold-deep); }
+
+  .swatch{
+    border-radius:4px; overflow:hidden; border:1px solid var(--cream-line);
+    box-shadow:0 18px 40px rgba(11,30,61,0.08);
+  }
+  .swatch .browser-chrome{ background:#F0ECE3; }
+  .swatch .browser-body{ padding:20px; min-height:150px; }
+  .swatch.boutique .browser-body{ background:#FBF3EF; }
+  .swatch.boutique .mock-blocks div{ background:#F1DCCB; border-color:#E9C9AF; }
+  .swatch.boutique .mock-gold-bar{ background:#B5836A; }
+  .swatch.cafe .browser-body{ background:#FBF7EC; }
+  .swatch.cafe .mock-blocks div{ background:#E7D8B8; border-color:#DCC69B; }
+  .swatch.cafe .mock-gold-bar{ background:#8A5A2E; }
+  .swatch.coach .browser-body{ background:#F0F4F5; }
+  .swatch.coach .mock-blocks div{ background:#CFE0E1; border-color:#B9D4D6; }
+  .swatch.coach .mock-gold-bar{ background:#2E6E71; }
+
+  /* ---------- Workflow ---------- */
+  .workflow{
+    display:grid; grid-template-columns:repeat(4,1fr); gap:0; position:relative;
+  }
+  .workflow::before{
+    content:""; position:absolute; top:26px; left:6%; right:6%; height:1px;
+    background:repeating-linear-gradient(90deg, var(--gold) 0 8px, transparent 8px 16px);
+  }
+  .work-step{ padding:0 20px 0 0; position:relative; }
+  .work-num{
+    width:52px; height:52px; border-radius:50%;
+    background:var(--navy); color:var(--gold-bright);
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Fraunces', serif; font-size:18px;
+    position:relative; z-index:1; margin-bottom:24px;
+  }
+  .work-step h3{ font-size:19px; margin-bottom:10px; }
+  .work-step p{ color:var(--ink-soft); font-size:14.5px; max-width:230px; }
+
+  /* ---------- Pricing ---------- */
+  .pricing-grid{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:24px; align-items:stretch;
+  }
+  .price-card{
+    background:var(--white); border:1px solid var(--cream-line);
+    padding:40px 32px; display:flex; flex-direction:column;
+    position:relative;
+  }
+  .price-card.featured{
+    background:var(--navy); color:var(--white); border-color:var(--navy);
+    transform:translateY(-14px);
+    box-shadow:0 30px 60px rgba(11,30,61,0.22);
+  }
+  .price-card.featured h3, .price-card.featured .price-num{ color:var(--white); }
+  .price-tag{
+    position:absolute; top:-13px; right:32px;
+    background:var(--gold); color:var(--navy-deep);
+    font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:.06em;
+    text-transform:uppercase; padding:5px 10px;
+  }
+  .price-card h3{ font-size:20px; }
+  .price-num{
+    font-family:'Fraunces', serif; font-size:44px; color:var(--navy); margin:18px 0 2px;
+  }
+  .price-sub{ font-size:13px; color:var(--ink-faint); margin-bottom:24px; }
+  .price-card.featured .price-sub{ color:rgba(255,255,255,0.55); }
+  .price-list{ flex:1; margin-bottom:28px; }
+  .price-list li{
+    display:flex; gap:10px; padding:10px 0; font-size:14.5px;
+    border-top:1px solid var(--cream-line);
+  }
+  .price-card.featured .price-list li{ border-top:1px solid var(--navy-line); }
+  .price-list li::before{ content:"—"; color:var(--gold-deep); flex-shrink:0; }
+  .price-card .btn{ width:100%; }
+
+  /* ---------- Testimonials ---------- */
+  .testi-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:28px; }
+  .testi-card{
+    background:var(--white); padding:32px 28px; border:1px solid var(--cream-line);
+    display:flex; flex-direction:column; height:100%;
+  }
+  .testi-mark{ font-family:'Fraunces', serif; font-size:40px; color:var(--gold); line-height:1; margin-bottom:6px;}
+  .testi-quote{ font-size:15.5px; color:var(--ink); flex:1; }
+  .testi-who{ margin-top:22px; padding-top:16px; border-top:1px solid var(--cream-line); }
+  .testi-name{ font-weight:600; font-size:14px; }
+  .testi-role{ font-size:12.5px; color:var(--ink-faint); margin-top:2px; }
+
+  /* ---------- Lead + Contact ---------- */
+  .contact-section{ background:var(--navy); color:var(--white); }
+  .contact-grid{ display:grid; grid-template-columns:0.9fr 1.1fr; gap:64px; align-items:start; }
+  .lead-box{
+    border:1px solid var(--navy-line); padding:32px; background:rgba(255,255,255,0.03);
+  }
+  .lead-box h3{ color:var(--white); font-size:22px; margin-bottom:12px; }
+  .lead-box p{ color:rgba(255,255,255,0.68); font-size:14.5px; margin-bottom:20px;}
+  .lead-list{ margin-bottom:22px; }
+  .lead-list li{ font-size:14px; color:rgba(255,255,255,0.8); padding:6px 0; display:flex; gap:8px;}
+  .lead-list li::before{ content:"✓"; color:var(--gold-bright); }
+
+  form{ display:grid; gap:16px; }
+  .form-row{ display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+  label{ font-size:12.5px; color:rgba(255,255,255,0.6); margin-bottom:6px; display:block; }
+  input, select, textarea{
+    width:100%; background:rgba(255,255,255,0.06); border:1px solid var(--navy-line);
+    color:var(--white); padding:13px 14px; font-family:inherit; font-size:14.5px;
+    border-radius:var(--radius);
+  }
+  input::placeholder, textarea::placeholder{ color:rgba(255,255,255,0.35); }
+  input:focus, select:focus, textarea:focus{
+    outline:none; border-color:var(--gold);
+  }
+  textarea{ min-height:110px; resize:vertical; }
+  .checkbox-row{ display:flex; align-items:flex-start; gap:10px; font-size:13px; color:rgba(255,255,255,0.65); }
+  .checkbox-row input{ width:16px; height:16px; margin-top:2px; flex-shrink:0; }
+  .form-note{ font-size:12px; color:rgba(255,255,255,0.4); margin-top:4px; }
+  #form-success{
+    display:none; background:rgba(198,161,91,0.12); border:1px solid var(--gold);
+    color:var(--gold-bright); padding:14px 16px; font-size:14px; border-radius:var(--radius);
+  }
+
+  /* ---------- Blog ---------- */
+  .blog-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:28px; }
+  .blog-card{ border:1px solid var(--cream-line); background:var(--white); }
+  .blog-thumb{
+    height:150px; background:var(--cream);
+    position:relative; overflow:hidden;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .blog-thumb .glyph{ font-family:'Fraunces', serif; font-size:56px; color:var(--gold); opacity:.5; }
+  .blog-body{ padding:24px; }
+  .blog-cat{ font-family:'IBM Plex Mono', monospace; font-size:11px; text-transform:uppercase; letter-spacing:.06em; color:var(--gold-deep); }
+  .blog-body h3{ font-size:18px; margin:10px 0 10px; }
+  .blog-body p{ font-size:14px; color:var(--ink-soft); }
+  .blog-read{ margin-top:16px; font-size:13px; font-weight:600; color:var(--navy); display:inline-block; }
+  .blog-read::after{ content:" →"; }
+
+  /* ---------- Footer ---------- */
+  footer{ background:var(--navy-deep); color:rgba(255,255,255,0.6); padding:64px 0 32px; }
+  .footer-grid{ display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:40px; padding-bottom:40px; }
+  .footer-logo{ font-family:'Fraunces', serif; font-size:20px; color:var(--white); margin-bottom:14px; }
+  .footer-col h4{ font-family:'IBM Plex Mono', monospace; font-size:11px; text-transform:uppercase; letter-spacing:.08em; color:rgba(255,255,255,0.4); margin-bottom:16px; font-weight:500;}
+  .footer-col ul li{ padding:6px 0; font-size:14px; }
+  .footer-col ul li a:hover{ color:var(--gold-bright); }
+  .footer-bottom{
+    border-top:1px solid rgba(255,255,255,0.08); padding-top:24px;
+    display:flex; justify-content:space-between; font-size:12.5px; flex-wrap:wrap; gap:10px;
+  }
+
+  /* ---------- Utility ---------- */
+  .center{ text-align:center; margin-left:auto; margin-right:auto; }
+  .mt-56{ margin-top:56px; }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 980px){
+    .hero-grid{ grid-template-columns:1fr; }
+    .browser-mock{ max-width:460px; }
+    .ledger-entry{ grid-template-columns:56px 1fr; }
+    .ledger-entry .swatch{ grid-column:1 / -1; margin-top:20px; order:3; }
+    .workflow{ grid-template-columns:1fr 1fr; row-gap:44px; }
+    .workflow::before{ display:none; }
+    .pricing-grid{ grid-template-columns:1fr; }
+    .price-card.featured{ transform:none; }
+    .testi-grid{ grid-template-columns:1fr; }
+    .contact-grid{ grid-template-columns:1fr; }
+    .blog-grid{ grid-template-columns:1fr; }
+    .footer-grid{ grid-template-columns:1fr 1fr; }
+  }
+  @media (max-width: 720px){
+    .nav-links{
+      position:absolute; top:76px; left:0; right:0; background:var(--white);
+      flex-direction:column; align-items:stretch; gap:0;
+      border-bottom:1px solid var(--cream-line);
+      display:none;
+      padding:8px 32px 20px;
+    }
+    .nav-links.open{ display:flex; }
+    .nav-links a{ padding:14px 0; border-bottom:1px solid var(--cream-line); }
+    .nav-links .btn{ margin-top:14px; }
+    .nav-toggle{ display:block; }
+    .section{ padding:72px 0; }
+    .form-row{ grid-template-columns:1fr; }
+    .footer-grid{ grid-template-columns:1fr; gap:28px; }
+    .hero{ padding-top:140px; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+    *{ transition:none !important; }
+  }
+
+  :focus-visible{ outline:2px solid var(--gold); outline-offset:2px; }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="nav">
+    <a href="#top" class="logo">Ledger <span>&amp;</span> Gold</a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" id="navToggle">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links" id="navLinks">
+      <a href="#work">Work</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#process">Process</a>
+      <a href="#blog">Insights</a>
+      <a href="#contact" class="btn btn-gold">Start a project</a>
+    </div>
+  </nav>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="eyebrow" style="color:var(--gold-bright)">Web Design Studio · Small Business Specialists</div>
+        <h1>A website that keeps its <em>books</em> in order — and keeps bringing customers <em>in the door.</em></h1>
+        <p class="lead">We build custom, fast, search-friendly websites for boutiques, cafés, coaches, and studios — priced clearly, delivered on a fixed timeline, with no agency bloat.</p>
+        <div class="hero-ctas">
+          <a href="#contact" class="btn btn-gold">Book a free consultation</a>
+          <a href="#work" class="btn btn-outline-light">See our work</a>
+        </div>
+        <div class="hero-stats">
+          <div>
+            <div class="stat-num">4</div>
+            <div class="stat-label">week average<br>turnaround</div>
+          </div>
+          <div>
+            <div class="stat-num">$499</div>
+            <div class="stat-label">starting price,<br>fixed up front</div>
+          </div>
+          <div>
+            <div class="stat-num">100%</div>
+            <div class="stat-label">mobile-ready,<br>every build</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="browser-mock" role="img" aria-label="Illustration of a sample small business website layout">
+          <div class="browser-chrome"><i></i><i></i><i></i><span class="chrome-url">hazelandhearth.com</span></div>
+          <div class="browser-body">
+            <div class="mock-brand">Hazel &amp; Hearth</div>
+            <div class="mock-headline">Handmade candles,<br>poured in small batches.</div>
+            <div class="mock-gold-bar">Shop the collection</div>
+            <div class="mock-blocks">
+              <div><span>Amber Fig</span><em>$28</em></div>
+              <div><span>Cedar Smoke</span><em>$28</em></div>
+              <div><span>Sea Salt</span><em>$24</em></div>
+            </div>
+            <div class="mock-footnote">Free shipping over $75 · 4.9★ (340 reviews)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO -->
+  <section class="section" id="work">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">The Ledger — Recent Work</div>
+        <h2>Three businesses, three problems, three different sites.</h2>
+        <p>Every project starts from what the business actually needs — not a template. Here's a sample of the kind of work we do.</p>
+      </div>
+
+      <div class="ledger-entry">
+        <div class="entry-num">01</div>
+        <div class="entry-copy">
+          <span class="entry-tag">Boutique Clothing Brand</span>
+          <h3>Wildflower &amp; Co.</h3>
+          <p>A storefront for a small-batch clothing label that needed to feel as considered as the clothes themselves — soft type, generous space, a lookbook that doubles as a shop.</p>
+          <div class="entry-result">22% higher average order value in the first two months</div>
+        </div>
+        <div class="swatch boutique">
+          <div class="browser-chrome"><i></i><i></i><i></i><span class="chrome-url">wildflowerandco.com</span></div>
+          <div class="browser-body">
+            <div class="mock-brand" style="color:#8A5A3E;">Wildflower &amp; Co.</div>
+            <div class="mock-headline" style="color:#5C3D2A;">Autumn 2026<br>Capsule Collection</div>
+            <div class="mock-blocks">
+              <div><span>The Linen Wrap Dress</span><em>$168</em></div>
+              <div><span>Ochre Silk Scarf</span><em>$64</em></div>
+            </div>
+            <div class="mock-gold-bar" style="background:#B5836A;">View the lookbook</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ledger-entry">
+        <div class="entry-num">02</div>
+        <div class="entry-copy">
+          <span class="entry-tag">Local Café · E-Commerce</span>
+          <h3>Corner Bean Café</h3>
+          <p>Online ordering and bean subscriptions for a neighborhood café, built to survive a lunchtime rush without falling over — and to look as warm as the shop itself.</p>
+          <div class="entry-result">Phone-in orders cut in half within one month of launch</div>
+        </div>
+        <div class="swatch cafe">
+          <div class="browser-chrome"><i></i><i></i><i></i><span class="chrome-url">cornerbeancafe.com</span></div>
+          <div class="browser-body">
+            <div class="mock-brand" style="color:#6B4423;">Corner Bean Café</div>
+            <div class="mock-headline" style="color:#4A3117;">Order ahead.<br>Skip the line.</div>
+            <div class="mock-blocks">
+              <div><span>House Blend, 12oz bag</span><em>$16</em></div>
+              <div><span>Monthly Subscription</span><em>$14/mo</em></div>
+            </div>
+            <div class="mock-gold-bar" style="background:#8A5A2E;">Start your order</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ledger-entry">
+        <div class="entry-num">03</div>
+        <div class="entry-copy">
+          <span class="entry-tag">Personal Coach · Booking Site</span>
+          <h3>Clarity Coaching</h3>
+          <p>A one-person coaching practice needed to stop managing bookings by text. We built a calendar-first site with automated scheduling, intake forms, and payment up front.</p>
+          <div class="entry-result">6 hours a week given back, no more manual scheduling</div>
+        </div>
+        <div class="swatch coach">
+          <div class="browser-chrome"><i></i><i></i><i></i><span class="chrome-url">claritycoaching.com</span></div>
+          <div class="browser-body">
+            <div class="mock-brand" style="color:#2E6E71;">Clarity Coaching</div>
+            <div class="mock-headline" style="color:#1F4C4E;">Book your first<br>session, free.</div>
+            <div class="mock-blocks">
+              <div><span>60-min Strategy Call</span><em>$120</em></div>
+              <div><span>Monthly Coaching Plan</span><em>$450/mo</em></div>
+            </div>
+            <div class="mock-gold-bar" style="background:#2E6E71;">Check availability</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="section cream" id="process">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">How We Work</div>
+        <h2>Four steps. No surprises.</h2>
+        <p>The same clear process for every project, whether it's a one-page site or a full online store.</p>
+      </div>
+      <div class="workflow">
+        <div class="work-step">
+          <div class="work-num">01</div>
+          <h3>Discovery call</h3>
+          <p>A 30-minute conversation about your business, your customers, and what the site needs to do.</p>
+        </div>
+        <div class="work-step">
+          <div class="work-num">02</div>
+          <h3>Design mockup</h3>
+          <p>A visual layout of your homepage and key pages, built around your brand and content.</p>
+        </div>
+        <div class="work-step">
+          <div class="work-num">03</div>
+          <h3>Development</h3>
+          <p>We build the real thing — responsive, fast, and connected to the tools you already use.</p>
+        </div>
+        <div class="work-step">
+          <div class="work-num">04</div>
+          <h3>Launch</h3>
+          <p>We go live, check every page and device, and hand over a site you can actually update.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="section" id="pricing">
+    <div class="wrap">
+      <div class="section-head center">
+        <div class="eyebrow" style="justify-content:center;">Pricing</div>
+        <h2>Three tiers. One flat price each.</h2>
+        <p class="center">No hourly billing, no surprise invoices. Pick the tier that matches where your business is right now.</p>
+      </div>
+
+      <div class="pricing-grid">
+        <div class="price-card">
+          <h3>Basic Starter</h3>
+          <div class="price-num">$499</div>
+          <div class="price-sub">For a business that just needs to be found online</div>
+          <ul class="price-list">
+            <li>Up to 3 pages</li>
+            <li>Mobile-responsive design</li>
+            <li>Contact form setup</li>
+            <li>Basic on-page SEO</li>
+            <li>2 rounds of revisions</li>
+            <li>2-week turnaround</li>
+          </ul>
+          <a href="#contact" class="btn btn-outline-dark">Start with Basic</a>
+        </div>
+
+        <div class="price-card featured">
+          <div class="price-tag">Most Popular</div>
+          <h3>Business Growth</h3>
+          <div class="price-num">$999</div>
+          <div class="price-sub">For a business ready to convert visitors into customers</div>
+          <ul class="price-list">
+            <li>Up to 6 pages</li>
+            <li>Custom design mockup</li>
+            <li>Blog setup, ready for content</li>
+            <li>SEO + Google Business setup</li>
+            <li>3 rounds of revisions</li>
+            <li>3–4 week turnaround</li>
+            <li>30 days of post-launch support</li>
+          </ul>
+          <a href="#contact" class="btn btn-gold">Start with Growth</a>
+        </div>
+
+        <div class="price-card">
+          <h3>E-Commerce Pro</h3>
+          <div class="price-num">$1,499</div>
+          <div class="price-sub">For a business ready to sell online</div>
+          <ul class="price-list">
+            <li>Full online store, up to 25 products</li>
+            <li>Payment gateway integration</li>
+            <li>Inventory-ready product pages</li>
+            <li>Advanced SEO + analytics setup</li>
+            <li>4 rounds of revisions</li>
+            <li>4–6 week turnaround</li>
+            <li>60 days support + training session</li>
+          </ul>
+          <a href="#contact" class="btn btn-outline-dark">Start with Pro</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="section cream">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">In Their Words</div>
+        <h2>What business owners say after launch.</h2>
+      </div>
+      <div class="testi-grid">
+        <div class="testi-card">
+          <div class="testi-mark">"</div>
+          <p class="testi-quote">Wedding season used to mean a flooded inbox. Now three times as many couples book their consultation straight from the site, before we've said a word.</p>
+          <div class="testi-who">
+            <div class="testi-name">Marisol Vega</div>
+            <div class="testi-role">Owner, Bloom &amp; Bramble Florals</div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-mark">"</div>
+          <p class="testi-quote">I'd been sending clients to a Squarespace site I was embarrassed by. Ledger &amp; Gold gave me a portfolio that finally looks like the work I actually do.</p>
+          <div class="testi-who">
+            <div class="testi-name">Dane Okafor</div>
+            <div class="testi-role">Owner, Hazel Grove Photography</div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-mark">"</div>
+          <p class="testi-quote">They asked about our customers before they ever opened a design tool. That's the difference — the site actually sells the way we sell.</p>
+          <div class="testi-who">
+            <div class="testi-name">Priya Shah</div>
+            <div class="testi-role">Founder, Wildflower &amp; Co.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT / LEAD MAGNET -->
+  <section class="section contact-section" id="contact">
+    <div class="wrap contact-grid">
+      <div>
+        <div class="eyebrow" style="color:var(--gold-bright)">Get Started</div>
+        <h2 style="color:var(--white); font-size:clamp(26px,3vw,34px);">Tell us about your business.</h2>
+        <p style="color:rgba(255,255,255,0.68); margin-top:14px; max-width:420px;">Book a free consultation, or grab the guide first if you're still deciding what your site needs to do.</p>
+
+        <div class="lead-box mt-56">
+          <h3>Free: The Small Business Website Guide</h3>
+          <p>Five things every small business site needs before it can start earning its keep — sent straight to your inbox.</p>
+          <ul class="lead-list">
+            <li>What to put above the fold</li>
+            <li>The one page most sites forget</li>
+            <li>A simple SEO checklist</li>
+          </ul>
+          <a href="#lead-email" class="btn btn-outline-light" style="width:100%; justify-content:center;" onclick="document.getElementById('leadEmail').focus(); return false;">Send me the guide</a>
+        </div>
+      </div>
+
+      <div>
+        <form id="contactForm" novalidate>
+          <div class="form-row">
+            <div>
+              <label for="name">Full name</label>
+              <input type="text" id="name" name="name" placeholder="Jordan Lee" required>
+            </div>
+            <div>
+              <label for="email">Email address</label>
+              <input type="email" id="leadEmail" name="email" placeholder="you@yourbusiness.com" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div>
+              <label for="business">Business type</label>
+              <select id="business" name="business">
+                <option>Boutique / Retail</option>
+                <option>Café / Restaurant</option>
+                <option>Coaching / Services</option>
+                <option>Studio / Creative</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div>
+              <label for="tier">Interested in</label>
+              <select id="tier" name="tier">
+                <option>Basic Starter — $499</option>
+                <option>Business Growth — $999</option>
+                <option>E-Commerce Pro — $1,499</option>
+                <option>Not sure yet</option>
+              </select>
+            </div>
+          </div>
+          <div>
+            <label for="message">What does your business need?</label>
+            <textarea id="message" name="message" placeholder="Tell us a little about your business and what you're hoping your website will do."></textarea>
+          </div>
+          <div class="checkbox-row">
+            <input type="checkbox" id="newsletter" name="newsletter">
+            <label for="newsletter" style="margin:0; color:rgba(255,255,255,0.65);">Send me the free guide and occasional tips — no spam, unsubscribe anytime.</label>
+          </div>
+          <button type="submit" class="btn btn-gold" style="justify-self:start; margin-top:6px;">Book my free consultation</button>
+          <p class="form-note">This form is a design sample — connect it to your email service or CRM to go live.</p>
+          <div id="form-success" role="status">Thanks — we'll be in touch within one business day.</div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOG -->
+  <section class="section" id="blog">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Insights</div>
+        <h2>Notes for small business owners.</h2>
+        <p>Practical, no-jargon advice on getting more from your website.</p>
+      </div>
+      <div class="blog-grid">
+        <article class="blog-card">
+          <div class="blog-thumb"><span class="glyph">01</span></div>
+          <div class="blog-body">
+            <div class="blog-cat">Sales</div>
+            <h3>5 Ways to Boost Your Online Sales</h3>
+            <p>Small, specific changes — from checkout friction to product photos — that move the needle more than a full redesign.</p>
+            <a href="#" class="blog-read">Read the post</a>
+          </div>
+        </article>
+        <article class="blog-card">
+          <div class="blog-thumb"><span class="glyph">02</span></div>
+          <div class="blog-body">
+            <div class="blog-cat">Performance</div>
+            <h3>What Makes a Website Fast (and Why It Matters)</h3>
+            <p>A plain-English look at page speed, and why every extra second costs you customers on mobile.</p>
+            <a href="#" class="blog-read">Read the post</a>
+          </div>
+        </article>
+        <article class="blog-card">
+          <div class="blog-thumb"><span class="glyph">03</span></div>
+          <div class="blog-body">
+            <div class="blog-cat">SEO</div>
+            <h3>SEO Basics Every Small Business Owner Should Know</h3>
+            <p>The handful of settings and habits that actually help local customers find you on Google.</p>
+            <a href="#" class="blog-read">Read the post</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">Ledger &amp; Gold</div>
+        <p style="max-width:280px; font-size:14px;">A boutique studio building affordable, custom websites for small businesses that want to look — and run — like bigger ones.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Studio</h4>
+        <ul>
+          <li><a href="#work">Our work</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#process">Process</a></li>
+          <li><a href="#blog">Insights</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li>Business websites</li>
+          <li>Online stores</li>
+          <li>Booking &amp; scheduling sites</li>
+          <li>SEO setup</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li>hello@ledgerandgold.com</li>
+          <li>(555) 019-2244</li>
+          <li><a href="#contact">Book a consultation</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Ledger &amp; Gold Studio. All rights reserved.</span>
+      <span>Designed &amp; built in-house.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Mobile nav toggle
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => {
+    const isOpen = navLinks.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', isOpen);
+  });
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    navToggle.setAttribute('aria-expanded', 'false');
+  }));
+
+  // Contact form — client-side only sample handling
+  const form = document.getElementById('contactForm');
+  const success = document.getElementById('form-success');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('leadEmail').value.trim();
+    if(!name || !email){
+      form.reportValidity ? form.reportValidity() : alert('Please fill in your name and email.');
+      return;
+    }
+    success.style.display = 'block';
+    form.reset();
+  });
+</script>
+
+</body>
+</html>
